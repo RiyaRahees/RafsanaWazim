@@ -1,0 +1,167 @@
+/* Luxury Islamic Wedding Invitation - Global Stylesheet */
+:root {
+  --ivory: #FDFBF7;
+  --cream: #F8F5EE;
+  --warm-sand: #F2EBE0;
+  --antique-gold: #C5A059;
+  --champagne-gold: #D4AF37;
+  --deep-gold: #9E7D3B;
+  --gold-glow: rgba(212, 175, 55, 0.25);
+  --mocha: #3A2E2B;
+  --soft-mocha: #5C4B47;
+  --charcoal: #221F1F;
+  --marble-border: rgba(197, 160, 89, 0.4);
+
+  --font-serif: 'Cormorant Garamond', 'Cormorant Upright', 'Cormorant', Georgia, serif;
+  --font-script: 'Alex Brush', cursive;
+  --font-arabic: 'Amiri', 'Traditional Arabic', serif;
+  --font-body: 'Gotu', 'Montserrat', sans-serif;
+  --font-display: 'Cinzel', serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #F8F5EE;
+  color: var(--soft-mocha);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #F8F5EE;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--antique-gold);
+  border-radius: 3px;
+}
+
+/* Text selections */
+::selection {
+  background: var(--antique-gold);
+  color: #fff;
+}
+
+/* Luxury Card & Glass Containers */
+.luxury-card {
+  background: rgba(253, 251, 247, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--marble-border);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.08), 0 0 1px 1px rgba(212, 175, 55, 0.15);
+}
+
+/* Elegant gold gradient text */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #8A6A2C 0%, #D4AF37 40%, #B8860B 75%, #6E4F1B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Bismillah and Arabic Calligraphy */
+.arabic-calligraphy {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  letter-spacing: 0;
+  line-height: 1.8;
+}
+
+/* Interactive Luxury Button */
+.luxury-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2.4rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #B58D3D 0%, #D4AF37 50%, #9B772E 100%);
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(181, 141, 61, 0.35);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.luxury-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.7s ease;
+}
+
+.luxury-btn:hover::before {
+  left: 100%;
+}
+
+.luxury-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+}
+
+.luxury-btn:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Floating Music Player Controls */
+.music-toggle-btn {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  z-index: 999;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1C1815 0%, #2A241F 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.6);
+  color: #D4AF37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35), 0 0 15px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.music-wave {
+  animation: musicWave 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes musicWave {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
